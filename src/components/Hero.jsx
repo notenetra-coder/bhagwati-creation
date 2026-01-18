@@ -7,7 +7,7 @@ import saleBg from '../assets/winter_sale_bg.png';
 const Hero = () => {
     return (
         <section
-            className="relative w-full overflow-hidden mt-36 md:mt-44 py-12 md:py-20 bg-cover bg-center bg-no-repeat"
+            className="relative w-full overflow-hidden py-12 md:py-20 bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${saleBg})`, backgroundColor: '#fdf2f8' }} // Fallrback color
         >
             <div className="container mx-auto px-4 md:px-8 flex flex-col lg:flex-row items-center justify-center gap-12">

@@ -1,24 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
 
-
 const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
 
     const navLinks = [
         { name: 'New Arrivals', href: '#' },
@@ -29,70 +14,88 @@ const Header = () => {
     ];
 
     return (
-        <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-primary shadow-md py-1' : 'bg-primary py-4'
-                }`}
-        >
-            <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
-                {/* Mobile Menu Button */}
+        <div className="w-full z-50 bg-white">
+            {/* Top Announcement Bar - Keeping the pink accent */}
+            <div className="bg-primary text-white text-center py-2 text-xs md:text-sm tracking-widest font-medium uppercase">
+                Free Shipping on Orders Above ₹999
+            </div>
+
+            {/* Logo Section - Scrolls away */}
+            <div className="container mx-auto px-4 md:px-8 py-6 flex justify-between items-center relative">
+                {/* Mobile Menu Button - Left on mobile */}
                 <button
-                    className="md:hidden text-gray-700"
+                    className="md:hidden text-gray-800"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
 
-                {/* Logo */}
-                <div className="text-center flex-1 md:flex-none md:text-left">
+                {/* Centered Logo */}
+                <div className="flex-1 flex justify-center md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
                     <a href="/" className="block">
-                        <img src={logo} alt="Bhagwati Creations" className={`object-contain transition-all duration-300 transform hover:scale-105 ${isScrolled ? 'h-14 md:h-16' : 'h-20 md:h-24'}`} />
+                        <img
+                            src={logo}
+                            alt="Bhagwati Creations"
+                            className="h-16 md:h-24 object-contain transition-transform hover:scale-105"
+                        />
                     </a>
                 </div>
 
-                {/* Desktop Nav */}
-                <nav className="hidden md:flex space-x-8">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className={`text-sm font-medium transition-colors uppercase tracking-wide text-white hover:text-gray-200`}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
-                </nav>
-
-                {/* Icons */}
-                <div className="flex items-center space-x-6 text-white">
-                    <button className="transition-colors hover:text-gray-200">
-                        <Search size={20} />
+                {/* Right Icons */}
+                <div className="flex items-center space-x-4 md:space-x-6 text-gray-800">
+                    <button className="hover:text-primary transition-colors">
+                        <Search size={22} />
                     </button>
-                    <button className="hidden md:block transition-colors hover:text-gray-200">
-                        <Heart size={20} />
+                    <button className="hidden md:block hover:text-primary transition-colors">
+                        <Heart size={22} />
                     </button>
-                    <button className="transition-colors relative hover:text-gray-200">
-                        <ShoppingBag size={20} />
-                        <span className="absolute -top-2 -right-2 text-[10px] font-bold px-1.5 py-0.5 rounded-full bg-white text-primary">0</span>
+                    <button className="hover:text-primary transition-colors relative">
+                        <ShoppingBag size={22} />
+                        <span className="absolute -top-1 -right-1.5 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">0</span>
                     </button>
                 </div>
             </div>
 
+            {/* Navigation Bar - Sticky */}
+            <header className="sticky top-0 z-50 bg-white shadow-sm border-t border-gray-100 hidden md:block">
+                <div className="container mx-auto px-4 py-4 flex justify-center">
+                    <nav className="flex space-x-12">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className="text-sm font-semibold uppercase tracking-wider text-gray-700 hover:text-primary transition-colors"
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </nav>
+                </div>
+            </header>
+
             {/* Mobile Menu Overlay */}
             {isMobileMenuOpen && (
-                <div className="absolute top-full left-0 w-full bg-white shadow-lg md:hidden flex flex-col p-4 border-t">
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.name}
-                            href={link.href}
-                            className="py-3 text-sm font-medium text-gray-700 hover:text-primary border-b border-gray-100 last:border-none"
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        >
-                            {link.name}
-                        </a>
-                    ))}
+                <div className="fixed inset-0 z-50 bg-white md:hidden animate-fade-in mx-4 my-20 shadow-2xl rounded-lg border border-gray-100 overflow-hidden">
+                    <div className="flex justify-end p-4">
+                        <button onClick={() => setIsMobileMenuOpen(false)}>
+                            <X size={24} className="text-gray-600" />
+                        </button>
+                    </div>
+                    <div className="flex flex-col p-6 space-y-4 text-center">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                href={link.href}
+                                className="text-lg font-medium text-gray-800 hover:text-primary"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                {link.name}
+                            </a>
+                        ))}
+                    </div>
                 </div>
             )}
-        </header>
+        </div>
     );
 };
 
