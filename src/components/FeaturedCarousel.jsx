@@ -40,7 +40,7 @@ const FeaturedCarousel = () => {
 
     return (
         <section className="py-12 bg-white overflow-hidden w-full relative">
-            <div className="container mx-auto px-4 relative h-[400px] flex items-center justify-center">
+            <div className="container mx-auto px-4 relative h-[300px] md:h-[400px] flex items-center justify-center">
 
                 {/* Navigation Buttons (Small & Minimal) */}
                 <button
@@ -58,38 +58,45 @@ const FeaturedCarousel = () => {
 
 
                 {/* Visible Slides Container */}
-                <div className="relative w-full max-w-4xl h-full flex items-center justify-center">
+                <div className="relative w-full max-w-6xl h-full flex items-center justify-center">
                     {/* Left Slide (Previous) */}
-                    <div className="absolute left-0 md:left-10 w-1/3 h-[70%] opacity-50 transform scale-90 transition-all duration-500 ease-in-out z-0 blur-[1px]">
+                    <div className="absolute left-[-10%] md:left-0 w-[60%] md:w-[45%] h-[60%] md:h-[70%] opacity-40 transform scale-90 transition-all duration-500 ease-in-out z-0 blur-[1px] rounded-xl overflow-hidden">
                         <img
                             src={slides[getVisibleSlideIndex(-1)].image}
                             alt="Previous"
-                            className="w-full h-full object-cover rounded-lg shadow-lg"
+                            className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-black/10 rounded-lg"></div>
+                        <div className="absolute inset-0 bg-white/20"></div>
                     </div>
 
-                    {/* Center Slide (Active) */}
-                    <div className="absolute w-1/2 md:w-[45%] h-full z-10 transform scale-100 transition-all duration-500 ease-in-out shadow-2xl rounded-xl overflow-hidden border-4 border-white">
+                    {/* Center Slide (Active) - Rectangular Aspect Ratio */}
+                    <div className="absolute w-[80%] md:w-[60%] h-[80%] md:h-[90%] z-10 transform scale-100 transition-all duration-500 ease-in-out shadow-2xl rounded-2xl overflow-hidden border-2 border-white">
                         <img
                             src={slides[currentIndex].image}
                             alt={slides[currentIndex].title}
                             className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-6 text-center">
-                            <h3 className="text-white text-2xl md:text-3xl font-serif italic mb-1">{slides[currentIndex].title}</h3>
-                            <button className="text-xs md:text-sm text-white uppercase tracking-widest font-semibold hover:text-[#E72480] transition-colors">{slides[currentIndex].subtitle}</button>
+                        {/* High Contrast Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 md:p-10 text-center">
+                            <h3 className="text-white text-3xl md:text-5xl font-black uppercase tracking-tighter drop-shadow-md mb-2 leading-none" style={{ fontFamily: 'Impact, sans-serif' }}>
+                                {slides[currentIndex].title}
+                            </h3>
+                            <div className="flex justify-center">
+                                <button className="text-xs md:text-sm text-black bg-white px-4 py-1.5 uppercase tracking-widest font-bold hover:bg-[#E72480] hover:text-white transition-colors duration-300 rounded-sm">
+                                    {slides[currentIndex].subtitle}
+                                </button>
+                            </div>
                         </div>
                     </div>
 
                     {/* Right Slide (Next) */}
-                    <div className="absolute right-0 md:right-10 w-1/3 h-[70%] opacity-50 transform scale-90 transition-all duration-500 ease-in-out z-0 blur-[1px]">
+                    <div className="absolute right-[-10%] md:right-0 w-[60%] md:w-[45%] h-[60%] md:h-[70%] opacity-40 transform scale-90 transition-all duration-500 ease-in-out z-0 blur-[1px] rounded-xl overflow-hidden">
                         <img
                             src={slides[getVisibleSlideIndex(1)].image}
                             alt="Next"
-                            className="w-full h-full object-cover rounded-lg shadow-lg"
+                            className="w-full h-full object-cover"
                         />
-                        <div className="absolute inset-0 bg-black/10 rounded-lg"></div>
+                        <div className="absolute inset-0 bg-white/20"></div>
                     </div>
                 </div>
 
