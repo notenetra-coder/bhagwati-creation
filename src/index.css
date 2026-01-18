@@ -6,11 +6,13 @@
 
 :root {
   /* Brand Colors */
-  --color-primary: #d81159;
-  /* Deep Pink - Distinct from logo but similar */
+  /* Brand Colors */
+  --color-primary: #E72480;
+  /* Updated Pink */
   /* Hot Pink to match logo */
-  --color-primary-light: #ff8fa3;
-  /* Soft Rose Pink */
+  --color-primary-light: #f06292;
+  /* Lighter shade if needed */
+  /* Light Pink */
   /* Light Pink */
   --color-secondary: #fff0f5;
   /* Lavender Blush */
