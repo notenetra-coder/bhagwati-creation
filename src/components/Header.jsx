@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <div className="w-full relative z-50 bg-white font-sans shadow-sm">
             {/* Announcement Bar */}
-            <div className="bg-[#E72480] text-white text-center py-2 text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase">
+            <div className="bg-[#ed2585] text-white text-center py-2 text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase">
                 Free Shipping on Orders Above ₹999
             </div>
 
@@ -50,7 +50,7 @@ const Header = () => {
                                 key={link.name}
                                 href={link.href}
                                 className={`text-sm font-semibold uppercase tracking-wider relative group py-2
-                                    ${link.isSale ? 'text-[#ed2585]' : 'text-gray-700 hover:text-[#ed2585]'}
+                                    ${link.isSale ? 'text-[#ed2585]' : 'text-[#ed2585] hover:text-[#c41e6e]'}
                                     transition-colors duration-300
                                 `}
                             >
@@ -83,7 +83,7 @@ const Header = () => {
                     onClick={(e) => e.stopPropagation()}
                 >
                     <div className="flex justify-between items-center p-6 border-b border-gray-100">
-                        <span className="text-lg font-serif italic text-[#E72480]">Menu</span>
+                        <span className="text-lg font-serif italic text-[#ed2585]">Menu</span>
                         <button onClick={() => setIsMobileMenuOpen(false)} className="text-gray-500 hover:text-red-500">
                             <X size={24} />
                         </button>
@@ -94,7 +94,7 @@ const Header = () => {
                                 key={link.name}
                                 href={link.href}
                                 className={`text-base font-medium uppercase tracking-wide
-                                    ${link.isSale ? 'text-[#E72480]' : 'text-gray-800'}
+                                    ${link.isSale ? 'text-[#ed2585]' : 'text-[#ed2585]'}
                                 `}
                                 onClick={() => setIsMobileMenuOpen(false)}
                             >
