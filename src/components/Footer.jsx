@@ -14,7 +14,7 @@ const Footer = () => {
                     {/* Brand Column */}
                     <div className="col-span-1 md:col-span-1">
                         <a href="/" className="block font-serif font-bold text-2xl tracking-widest text-primary mb-6">
-                            MYSTYLE
+                            Bhagwati Creations
                         </a>
                         <p className="text-gray-500 text-sm leading-relaxed mb-6">
                             Celebrating the essence of Indian ethnic wear with a modern touch. Handcrafted with love for the contemporary woman.

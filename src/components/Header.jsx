@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
+import logo from '../assets/logo.png';
+
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -42,8 +44,8 @@ const Header = () => {
 
                 {/* Logo */}
                 <div className="text-center flex-1 md:flex-none md:text-left">
-                    <a href="/" className={`font-serif font-bold text-2xl tracking-widest ${isScrolled ? 'text-primary' : 'text-gray-900'}`}>
-                        MYSTYLE
+                    <a href="/" className="block">
+                        <img src={logo} alt="Bhagwati Creations" className="h-12 md:h-16 object-contain" />
                     </a>
                 </div>
 
