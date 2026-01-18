@@ -46,7 +46,7 @@ const Footer = ({ onAboutClick }) => {
                         <ul className="space-y-4 text-sm text-gray-500">
                             <li className="flex items-start gap-3">
                                 <MapPin size={18} className="mt-0.5 shrink-0" />
-                                <span>123 Fashion Street, Jaipur, Rajasthan, 302001</span>
+                                <span>G-29/ 1 Sector -3, Rohini, Near Sector-3 Bus Stand & Mother Divine Public School, Delhi-110085</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone size={18} />
