@@ -6,11 +6,14 @@
 
 :root {
   /* Brand Colors */
-  --color-primary: #e91e63;
+  --color-primary: #d81159;
+  /* Deep Pink - Distinct from logo but similar */
   /* Hot Pink to match logo */
-  --color-primary-light: #f8bbd0;
+  --color-primary-light: #ff8fa3;
+  /* Soft Rose Pink */
   /* Light Pink */
-  --color-secondary: #f9f9f9;
+  --color-secondary: #fff0f5;
+  /* Lavender Blush */
   /* Light background */
   --color-accent: #d4af37;
   /* Gold */
