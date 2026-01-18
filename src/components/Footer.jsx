@@ -1,7 +1,7 @@
 import React from 'react';
 import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 
-const Footer = () => {
+const Footer = ({ onAboutClick }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         alert("Thanks for subscribing!");
@@ -30,7 +30,9 @@ const Footer = () => {
                     <div>
                         <h3 className="font-serif font-bold text-gray-900 mb-6 tracking-wide">Quick Links</h3>
                         <ul className="space-y-3 text-sm text-gray-500">
-                            <li><a href="#" className="hover:text-primary transition-colors">About Us</a></li>
+                            <li>
+                                <button onClick={onAboutClick} className="hover:text-primary transition-colors text-left">About Us</button>
+                            </li>
                             <li><a href="#" className="hover:text-primary transition-colors">Contact Us</a></li>
                             <li><a href="#" className="hover:text-primary transition-colors">Track Order</a></li>
                             <li><a href="#" className="hover:text-primary transition-colors">Shipping Policy</a></li>
