@@ -30,7 +30,7 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-primary shadow-md py-2' : 'bg-white py-4'
                 }`}
         >
             <div className="container mx-auto px-4 md:px-8 flex justify-between items-center">
@@ -55,7 +55,7 @@ const Header = () => {
                         <a
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-gray-700 hover:text-primary transition-colors uppercase tracking-wide"
+                            className={`text-sm font-medium transition-colors uppercase tracking-wide ${isScrolled ? 'text-white hover:text-gray-200' : 'text-gray-700 hover:text-primary'}`}
                         >
                             {link.name}
                         </a>
@@ -63,16 +63,16 @@ const Header = () => {
                 </nav>
 
                 {/* Icons */}
-                <div className="flex items-center space-x-6 text-gray-700">
-                    <button className="hover:text-primary transition-colors">
+                <div className={`flex items-center space-x-6 ${isScrolled ? 'text-white' : 'text-gray-700'}`}>
+                    <button className={`transition-colors ${isScrolled ? 'hover:text-gray-200' : 'hover:text-primary'}`}>
                         <Search size={20} />
                     </button>
-                    <button className="hidden md:block hover:text-primary transition-colors">
+                    <button className={`hidden md:block transition-colors ${isScrolled ? 'hover:text-gray-200' : 'hover:text-primary'}`}>
                         <Heart size={20} />
                     </button>
-                    <button className="hover:text-primary transition-colors relative">
+                    <button className={`transition-colors relative ${isScrolled ? 'hover:text-gray-200' : 'hover:text-primary'}`}>
                         <ShoppingBag size={20} />
-                        <span className="absolute -top-2 -right-2 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">0</span>
+                        <span className={`absolute -top-2 -right-2 text-[10px] font-bold px-1.5 py-0.5 rounded-full ${isScrolled ? 'bg-white text-primary' : 'bg-primary text-white'}`}>0</span>
                     </button>
                 </div>
             </div>

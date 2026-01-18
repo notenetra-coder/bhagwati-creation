@@ -5,10 +5,13 @@
 @tailwind utilities;
 
 :root {
-  /* Brand Colors - Muted Red/Pink & Gold typical of Bunaai */
-  --color-primary: #b05d5d; 
-  --color-secondary: #f9f9f9; /* Light background */
-  --color-accent: #d4af37; /* Gold */
+  /* Brand Colors */
+  --color-primary: #e91e63;
+  /* Hot Pink to match logo */
+  --color-secondary: #f9f9f9;
+  /* Light background */
+  --color-accent: #d4af37;
+  /* Gold */
   --color-text-main: #333333;
 }
 
@@ -18,7 +21,12 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: 'Playfair Display', serif;
 }
 
@@ -26,13 +34,16 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #ccc; 
+  background: #ccc;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #aaa; 
+  background: #aaa;
 }
