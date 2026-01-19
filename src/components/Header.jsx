@@ -22,7 +22,7 @@ const Header = () => {
 
             {/* Main Header - Single Line */}
             <header className="sticky top-0 bg-[#ed2585] z-50">
-                <div className="container mx-auto px-4 md:px-8 h-24 md:h-32 flex items-center justify-between">
+                <div className="container mx-auto px-4 md:px-8 h-20 md:h-24 flex items-center justify-between">
 
                     {/* Left: Mobile Menu Button */}
                     <button
