@@ -21,10 +21,10 @@ const ProductGrid = () => {
     return (
         <section className="py-16 bg-white">
             <div className="container mx-auto px-4 md:px-8">
-                <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-4">New Arrivals</h2>
-                    <div className="w-24 h-1 bg-accent mx-auto"></div>
-                    <p className="mt-4 text-gray-500 max-w-2xl mx-auto">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-5xl font-serif font-medium text-gray-900 mb-6 tracking-[0.2em] uppercase">New Arrivals</h2>
+                    <div className="w-24 h-1 bg-[#ed2585] mx-auto rounded-full"></div>
+                    <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg font-light leading-relaxed">
                         Discover our latest collection of handpicked ethnic wear, designed to make you shine on every occasion.
                     </p>
                 </div>
