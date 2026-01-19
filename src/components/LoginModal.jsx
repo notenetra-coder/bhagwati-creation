@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useShop } from '../context/ShopContext';
 import { X } from 'lucide-react';
 import loginBanner from '../assets/login_banner.png';
 import logo from '../assets/logo.png';
@@ -6,8 +7,19 @@ import logo from '../assets/logo.png';
 
 const LoginModal = ({ isOpen, onClose }) => {
     const [phoneNumber, setPhoneNumber] = useState('');
+    const { login } = useShop();
 
     if (!isOpen) return null;
+
+    const handleLogin = () => {
+        if (phoneNumber.length >= 10) {
+            login();
+            onClose();
+            alert("Logged in successfully!");
+        } else {
+            alert("Please enter a valid phone number");
+        }
+    };
 
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
@@ -83,7 +95,10 @@ const LoginModal = ({ isOpen, onClose }) => {
                                 />
                             </div>
 
-                            <button className="w-full bg-black text-white py-3 rounded font-medium text-sm hover:bg-gray-800 transition-colors uppercase tracking-wide mt-6">
+                            <button
+                                onClick={handleLogin}
+                                className="w-full bg-black text-white py-3 rounded font-medium text-sm hover:bg-gray-800 transition-colors uppercase tracking-wide mt-6"
+                            >
                                 Request OTP
                             </button>
                         </div>

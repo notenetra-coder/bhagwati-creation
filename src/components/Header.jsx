@@ -115,27 +115,48 @@ const Header = () => {
                                 <div className="py-1">
                                     <div className="px-4 py-3 border-b border-gray-100 bg-gray-50">
                                         <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Welcome</p>
-                                        <p className="text-xs text-gray-400">To Bhagwati Creations</p>
+                                        <p className="text-xs text-gray-400">{isLoggedIn ? "User" : "To Bhagwati Creations"}</p>
                                     </div>
 
+                                    {!isLoggedIn ? (
+                                        <button
+                                            onClick={() => setIsLoginOpen(true)}
+                                            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors"
+                                        >
+                                            Login / Sign Up
+                                        </button>
+                                    ) : (
+                                        <button
+                                            onClick={() => {
+                                                logout();
+                                                alert("Logged out successfully");
+                                            }}
+                                            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors"
+                                        >
+                                            Logout
+                                        </button>
+                                    )}
+
                                     <button
-                                        onClick={() => setIsLoginOpen(true)}
+                                        onClick={() => isLoggedIn ? navigate('/orders') : (alert("Please Login to view My Orders"), setIsLoginOpen(true))}
                                         className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors"
                                     >
-                                        Login / Sign Up
+                                        My Orders
                                     </button>
 
-                                    <Link to="/orders" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors">
-                                        My Orders
-                                    </Link>
-
-                                    <Link to="/addresses" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors">
+                                    <button
+                                        onClick={() => isLoggedIn ? navigate('/addresses') : (alert("Please Login to view Saved Addresses"), setIsLoginOpen(true))}
+                                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors"
+                                    >
                                         Saved Addresses
-                                    </Link>
+                                    </button>
 
-                                    <Link to="/contact" className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors">
+                                    <button
+                                        onClick={() => isLoggedIn ? navigate('/contact') : (alert("Please Login to Contact Us"), setIsLoginOpen(true))}
+                                        className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors"
+                                    >
                                         Contact Us
-                                    </Link>
+                                    </button>
                                 </div>
                             </div>
                         </div>

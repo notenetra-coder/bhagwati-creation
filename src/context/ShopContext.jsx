@@ -7,6 +7,7 @@ export const useShop = () => useContext(ShopContext);
 export const ShopProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
     const [wishlist, setWishlist] = useState([]);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     const addToCart = (product) => {
         setCart((prev) => [...prev, product]);
@@ -29,8 +30,11 @@ export const ShopProvider = ({ children }) => {
         setWishlist((prev) => prev.filter(item => item.id !== productId));
     };
 
+    const login = () => setIsLoggedIn(true);
+    const logout = () => setIsLoggedIn(false);
+
     return (
-        <ShopContext.Provider value={{ cart, wishlist, addToCart, removeFromCart, addToWishlist, removeFromWishlist }}>
+        <ShopContext.Provider value={{ cart, wishlist, isLoggedIn, addToCart, removeFromCart, addToWishlist, removeFromWishlist, login, logout }}>
             {children}
         </ShopContext.Provider>
     );
