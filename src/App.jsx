@@ -8,6 +8,7 @@ import Wishlist from './pages/Wishlist';
 import CategoryPage from './pages/CategoryPage';
 import Footer from './components/Footer';
 import AboutModal from './components/AboutModal';
+import Contact from './pages/Contact';
 
 function App() {
   // Main application component
@@ -23,6 +24,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>
       <Footer onAboutClick={() => setIsAboutOpen(true)} />
