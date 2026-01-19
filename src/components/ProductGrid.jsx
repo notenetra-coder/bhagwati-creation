@@ -1,23 +1,9 @@
 import React from 'react';
 import ProductCard from './ProductCard';
-
-import product1 from '../assets/product1.png';
-import product2 from '../assets/product2.jpg';
-import product3 from '../assets/product3.jpg';
-import product4 from '../assets/product4.png';
+import { products } from '../data/products';
 
 const ProductGrid = () => {
-    // Mock Data
-    const products = [
-        { id: 1, name: "Peach Floral Anarkali Set", category: "Suit Set", price: "₹2,499", originalPrice: "₹4,999", tag: "Best Seller", image: product1 },
-        { id: 2, name: "Teal Embroidered Kurta", category: "Kurta", price: "₹1,899", originalPrice: "₹2,599", image: product2 },
-        { id: 3, name: "Ivory Cotton Maxi Dress", category: "Dresses", price: "₹2,100", tag: "New", image: product3 },
-        { id: 4, name: "Lavender Embroidered Co-ord Set", category: "Co-ords", price: "₹2,599", originalPrice: "₹3,999", image: product4 },
-        { id: 5, name: "Maroon Silk Sharara Set", category: "Suit Set", price: "₹3,599", originalPrice: "₹6,000", tag: "Sale" },
-        { id: 6, name: "Indigo Block Print Co-ord", category: "Co-ords", price: "₹1,599" },
-        { id: 7, name: "Rose Pink Georgette Saree", category: "Saree", price: "₹2,899", tag: "Trending" },
-        { id: 8, name: "Mustard Palazzo Set", category: "Suit Set", price: "₹1,999", originalPrice: "₹3,499" },
-    ];
+
 
     return (
         <section className="py-16 bg-white">

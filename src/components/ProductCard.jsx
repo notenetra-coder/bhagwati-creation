@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Heart, ShoppingBag } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
+import { useNavigate } from 'react-router-dom';
 
 const ProductCard = ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);
     const { addToCart, addToWishlist } = useShop();
+    const navigate = useNavigate();
 
     const handleAddToCart = (e) => {
         e.stopPropagation();
@@ -23,6 +25,7 @@ const ProductCard = ({ product }) => {
             className="group cursor-pointer"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
+            onClick={() => navigate(`/product/${product.id}`)}
         >
             <div className="relative aspect-[3/4] overflow-hidden bg-gray-200 mb-4">
                 {product.image ? (
