@@ -5,7 +5,7 @@ import videoShoppingBg from '../assets/video_shopping_banner.png';
 const VideoShopping = () => {
     return (
         <section
-            className="relative py-28 text-white text-center bg-cover bg-center bg-no-repeat bg-fixed"
+            className="relative py-28 text-white text-center bg-cover bg-center bg-no-repeat"
             style={{ backgroundImage: `url(${videoShoppingBg})` }}
         >
             {/* Dark Overlay for readability */}
