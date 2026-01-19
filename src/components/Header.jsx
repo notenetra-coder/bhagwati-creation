@@ -38,7 +38,7 @@ const Header = () => {
                             <img
                                 src={logo}
                                 alt="Bhagwati Creations"
-                                className="h-20 md:h-28 object-contain hover:scale-105 transition-transform duration-300"
+                                className="h-20 md:h-24 object-contain hover:scale-105 transition-transform duration-300"
                             />
                         </a>
                     </div>
