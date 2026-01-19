@@ -21,12 +21,12 @@ const Header = () => {
             </div>
 
             {/* Main Header - Single Line */}
-            <header className="sticky top-0 bg-white z-50">
+            <header className="sticky top-0 bg-[#ed2585] z-50">
                 <div className="container mx-auto px-4 md:px-8 h-20 md:h-24 flex items-center justify-between">
 
                     {/* Left: Mobile Menu Button */}
                     <button
-                        className="lg:hidden text-[#ed2585]"
+                        className="lg:hidden text-white"
                         onClick={() => setIsMobileMenuOpen(true)}
                     >
                         <Menu size={24} />
@@ -50,27 +50,27 @@ const Header = () => {
                                 key={link.name}
                                 href={link.href}
                                 className={`text-sm font-semibold uppercase tracking-wider relative group py-2
-                                    ${link.isSale ? 'text-[#ed2585]' : 'text-[#ed2585] hover:text-[#c41e6e]'}
+                                    ${link.isSale ? 'text-white' : 'text-white hover:text-gray-100'}
                                     transition-colors duration-300
                                 `}
                             >
                                 {link.name}
-                                <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-[#ed2585] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
+                                <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
                             </a>
                         ))}
                     </nav>
 
                     {/* Right: Icons */}
                     <div className="flex items-center space-x-4 md:space-x-6">
-                        <button className="text-[#ed2585] hover:text-[#c41e6e] transition-colors">
+                        <button className="text-white hover:text-gray-100 transition-colors">
                             <Search size={20} strokeWidth={2} />
                         </button>
-                        <button className="hidden md:block text-[#ed2585] hover:text-[#c41e6e] transition-colors">
+                        <button className="hidden md:block text-white hover:text-gray-100 transition-colors">
                             <Heart size={20} strokeWidth={2} />
                         </button>
-                        <button className="text-[#ed2585] hover:text-[#c41e6e] transition-colors relative">
+                        <button className="text-white hover:text-gray-100 transition-colors relative">
                             <ShoppingBag size={20} strokeWidth={2} />
-                            <span className="absolute -top-1 -right-1 bg-[#ed2585] text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">0</span>
+                            <span className="absolute -top-1 -right-1 bg-white text-[#ed2585] text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">0</span>
                         </button>
                     </div>
                 </div>
