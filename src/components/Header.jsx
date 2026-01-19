@@ -79,36 +79,13 @@ const Header = () => {
 
                     {/* Right: Icons */}
                     <div className="flex items-center space-x-4 md:space-x-6">
-                        {/* Search Input (Expandable) */}
-                        <div className={`relative flex items-center transition-all duration-300 ${isSearchOpen ? 'w-48 bg-white rounded-full px-3 py-1' : 'w-auto'}`}>
-                            {isSearchOpen && (
-                                <form onSubmit={handleSearch} className="w-full">
-                                    <input
-                                        type="text"
-                                        placeholder="Search..."
-                                        className="w-full bg-transparent outline-none text-xs text-black placeholder-gray-500"
-                                        autoFocus
-                                        value={searchQuery}
-                                        onChange={(e) => setSearchQuery(e.target.value)}
-                                        onBlur={() => !searchQuery && setIsSearchOpen(false)} // Close on blur if empty
-                                    />
-                                </form>
-                            )}
-                            <button
-                                onClick={() => {
-                                    if (isSearchOpen && searchQuery.trim()) {
-                                        // If open and has query, submit
-                                        handleSearch({ preventDefault: () => { } });
-                                    } else {
-                                        // Just toggle
-                                        setIsSearchOpen(!isSearchOpen);
-                                    }
-                                }}
-                                className={`${isSearchOpen ? 'text-[#ed2585]' : 'text-white'} hover:text-gray-100 transition-colors ml-auto`}
-                            >
-                                <Search size={20} strokeWidth={2} />
-                            </button>
-                        </div>
+                        {/* Search Icon Trigger */}
+                        <button
+                            onClick={() => setIsSearchOpen(true)}
+                            className="text-white hover:text-gray-100 transition-colors"
+                        >
+                            <Search size={20} strokeWidth={2} />
+                        </button>
 
                         {/* Profile/User Icon */}
                         <div className="relative group">
@@ -212,6 +189,47 @@ const Header = () => {
                     </div>
                 </div>
             </div>
+
+            {/* Large Search Overlay */}
+            {isSearchOpen && (
+                <>
+                    <div className="fixed inset-0 bg-black/60 z-[60] backdrop-blur-sm" onClick={() => setIsSearchOpen(false)}></div>
+                    <div className="fixed top-0 left-0 w-full h-[50vh] bg-white z-[70] shadow-2xl flex flex-col items-center justify-center animate-in slide-in-from-top duration-500">
+                        <button
+                            onClick={() => setIsSearchOpen(false)}
+                            className="absolute top-8 right-8 text-gray-400 hover:text-[#ed2585] transition-colors"
+                        >
+                            <X size={40} strokeWidth={1.5} />
+                        </button>
+
+                        <div className="w-full max-w-4xl px-8 text-center">
+                            <h2 className="text-sm font-bold tracking-[0.2em] text-gray-400 uppercase mb-8">What are you looking for?</h2>
+                            <form onSubmit={handleSearch} className="w-full relative">
+                                <input
+                                    type="text"
+                                    placeholder="Search for sarees, suits, lehengas..."
+                                    className="w-full text-3xl md:text-6xl font-serif text-center border-b-2 border-gray-100 py-6 focus:outline-none focus:border-[#ed2585] placeholder-gray-200 text-gray-900 transition-all bg-transparent"
+                                    autoFocus
+                                    value={searchQuery}
+                                    onChange={(e) => setSearchQuery(e.target.value)}
+                                />
+                                <button
+                                    type="submit"
+                                    className="absolute right-0 bottom-6 text-[#ed2585] hover:text-[#c41e6e] transition-colors"
+                                >
+                                    <Search size={32} />
+                                </button>
+                            </form>
+                            <div className="mt-8 flex justify-center gap-4 text-sm text-gray-500">
+                                <span>Popular:</span>
+                                <button onClick={() => { setSearchQuery('Saree'); handleSearch({ preventDefault: () => { } }); }} className="hover:text-[#ed2585] underline">Saree</button>
+                                <button onClick={() => { setSearchQuery('Anarkali'); handleSearch({ preventDefault: () => { } }); }} className="hover:text-[#ed2585] underline">Anarkali</button>
+                                <button onClick={() => { setSearchQuery('Lehenga'); handleSearch({ preventDefault: () => { } }); }} className="hover:text-[#ed2585] underline">Lehenga</button>
+                            </div>
+                        </div>
+                    </div>
+                </>
+            )}
 
             {/* Login Modal */}
             <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
