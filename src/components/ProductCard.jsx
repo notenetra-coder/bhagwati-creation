@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
 import { Heart, ShoppingBag } from 'lucide-react';
+import { useShop } from '../context/ShopContext';
 
 const ProductCard = ({ product }) => {
     const [isHovered, setIsHovered] = useState(false);
+    const { addToCart, addToWishlist } = useShop();
 
     const handleAddToCart = (e) => {
         e.stopPropagation();
         e.preventDefault();
-        alert(`Added ${product.name} to cart!`);
+        addToCart(product);
     };
 
     const handleWishlist = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        alert(`Added ${product.name} to wishlist!`);
+        addToWishlist(product);
     };
 
     return (

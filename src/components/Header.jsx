@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X } from 'lucide-react';
 import logo from '../assets/logo.png';
 
+import { useShop } from '../context/ShopContext';
+
 const Header = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { cart } = useShop();
 
     const navLinks = [
         { name: 'New Arrivals', href: '#' },
@@ -70,7 +73,7 @@ const Header = () => {
                         </button>
                         <button className="text-white hover:text-gray-100 transition-colors relative">
                             <ShoppingBag size={20} strokeWidth={2} />
-                            <span className="absolute -top-1 -right-1 bg-white text-[#ed2585] text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">0</span>
+                            <span className="absolute -top-1 -right-1 bg-white text-[#ed2585] text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-bold">{cart.length}</span>
                         </button>
                     </div>
                 </div>
