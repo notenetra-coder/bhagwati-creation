@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { X } from 'lucide-react';
 import loginBanner from '../assets/login_banner.png';
 import logo from '../assets/logo.png';
-import indiaFlag from '../assets/india-flag.png'; // Assuming I need a flag, but I'll use text for now or just an emoji or placeholder if asset missing. 
 // Actually I don't have an india-flag.png. I will use a simple emoji or text 🇮🇳
 
 const LoginModal = ({ isOpen, onClose }) => {
