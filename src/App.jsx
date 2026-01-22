@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import AboutModal from './components/AboutModal';
+import Chatbot from './components/Chatbot';
 
 // Lazy load pages for better performance
 const Home = lazy(() => import('./pages/Home'));
@@ -37,6 +38,7 @@ function App() {
       </main>
       <Footer onAboutClick={() => setIsAboutOpen(true)} />
       <AboutModal isOpen={isAboutOpen} onClose={() => setIsAboutOpen(false)} />
+      <Chatbot />
     </div>
   );
 }
