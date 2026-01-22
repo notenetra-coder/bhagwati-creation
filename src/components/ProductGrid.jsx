@@ -1,9 +1,12 @@
 import React from 'react';
 import ProductCard from './ProductCard';
+import QuickViewModal from './QuickViewModal';
 import { products } from '../data/products';
 
 const ProductGrid = () => {
 
+
+    const [selectedProduct, setSelectedProduct] = React.useState(null);
 
     return (
         <section className="py-16 bg-white">
@@ -18,7 +21,11 @@ const ProductGrid = () => {
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
                     {products.map(product => (
-                        <ProductCard key={product.id} product={product} />
+                        <ProductCard
+                            key={product.id}
+                            product={product}
+                            onQuickView={(p) => setSelectedProduct(p)}
+                        />
                     ))}
                 </div>
 
@@ -28,6 +35,12 @@ const ProductGrid = () => {
                     </button>
                 </div>
             </div>
+
+            <QuickViewModal
+                product={selectedProduct}
+                isOpen={!!selectedProduct}
+                onClose={() => setSelectedProduct(null)}
+            />
         </section>
     );
 };

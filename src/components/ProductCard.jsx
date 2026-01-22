@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Heart, ShoppingBag } from 'lucide-react';
+import { Heart, ShoppingBag, Eye } from 'lucide-react';
 import { useShop } from '../context/ShopContext';
 import { useNavigate } from 'react-router-dom';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, onQuickView }) => {
     const [isHovered, setIsHovered] = useState(false);
     const { addToCart, addToWishlist, removeFromWishlist, wishlist } = useShop();
     const navigate = useNavigate();
@@ -15,6 +15,12 @@ const ProductCard = ({ product }) => {
         e.preventDefault();
         addToCart(product);
     };
+
+    const handleQuickView = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        if (onQuickView) onQuickView(product);
+    }
 
     const handleWishlist = (e) => {
         e.preventDefault();
@@ -59,6 +65,15 @@ const ProductCard = ({ product }) => {
                     className={`absolute top-3 right-3 p-2 rounded-full transition-colors opacity-0 group-hover:opacity-100 ${isWishlisted ? 'bg-white text-[#ed2585] opacity-100' : 'bg-white/80 text-gray-600 hover:text-[#ed2585] hover:bg-white'}`}
                 >
                     <Heart size={18} fill={isWishlisted ? "#ed2585" : "none"} />
+                </button>
+
+                {/* Quick View Icon */}
+                <button
+                    onClick={handleQuickView}
+                    className="absolute top-12 right-3 p-2 rounded-full bg-white/80 text-gray-600 hover:text-[#ed2585] hover:bg-white transition-colors opacity-0 group-hover:opacity-100 mt-2"
+                    title="Quick View"
+                >
+                    <Eye size={18} />
                 </button>
 
                 {/* Tag */}
