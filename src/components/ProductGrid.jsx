@@ -20,14 +20,14 @@ const ProductGrid = () => {
                 </div>
 
                 {/* Carousel Container */}
-                <div className="relative group/carousel">
+                <div className="relative group/carousel w-full">
                     {/* Previous Button */}
                     <button
                         onClick={() => {
                             const container = document.getElementById('product-carousel');
                             if (container) container.scrollBy({ left: -container.clientWidth, behavior: 'smooth' });
                         }}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 bg-white p-3 md:p-4 rounded-full shadow-xl text-gray-800 hover:bg-[#ed2585] hover:text-white transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 hidden md:flex items-center justify-center border border-gray-100"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white p-3 md:p-4 rounded-full shadow-xl text-gray-800 hover:bg-[#ed2585] hover:text-white transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 hidden md:flex items-center justify-center border border-gray-100"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
                     </button>
@@ -35,7 +35,7 @@ const ProductGrid = () => {
                     {/* Scrollable Area */}
                     <div
                         id="product-carousel"
-                        className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth"
+                        className="flex overflow-x-auto gap-4 md:gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
                         {products.map(product => (
@@ -54,7 +54,7 @@ const ProductGrid = () => {
                             const container = document.getElementById('product-carousel');
                             if (container) container.scrollBy({ left: container.clientWidth, behavior: 'smooth' });
                         }}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 bg-white p-3 md:p-4 rounded-full shadow-xl text-gray-800 hover:bg-[#ed2585] hover:text-white transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 hidden md:flex items-center justify-center border border-gray-100"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white p-3 md:p-4 rounded-full shadow-xl text-gray-800 hover:bg-[#ed2585] hover:text-white transition-all duration-300 opacity-0 group-hover/carousel:opacity-100 hidden md:flex items-center justify-center border border-gray-100"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                     </button>
