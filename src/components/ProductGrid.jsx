@@ -41,7 +41,7 @@ const ProductGrid = () => {
                         {products.map(product => (
                             <div
                                 key={product.id}
-                                className="min-w-[calc(50%-8px)] md:min-w-[calc(33.333%-11px)] lg:min-w-[calc(20%-13px)] snap-start flex-shrink-0"
+                                className="basis-1/2 md:basis-1/3 lg:basis-1/5 min-w-0 pl-2 md:pl-4 snap-start flex-shrink-0"
                             >
                                 <ProductCard
                                     product={product}
