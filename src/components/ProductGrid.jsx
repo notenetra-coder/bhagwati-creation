@@ -9,6 +9,7 @@ const ProductGrid = () => {
     const [selectedProduct, setSelectedProduct] = React.useState(null);
 
     return (
+        <section className="py-16 bg-white">
             <div className="container mx-auto px-4 md:px-8 relative group">
                 <div className="text-center mb-10">
                     <h2 className="text-4xl md:text-5xl font-serif font-medium text-gray-900 mb-6 tracking-[0.2em] uppercase">New Arrivals</h2>
@@ -21,15 +22,15 @@ const ProductGrid = () => {
                 {/* Carousel Container */}
                 <div className="relative">
                     {/* Previous Button */}
-                    <button 
+                    <button
                         onClick={() => document.getElementById('product-carousel').scrollBy({ left: -300, behavior: 'smooth' })}
                         className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white p-3 rounded-full shadow-lg text-gray-800 hover:bg-[#ed2585] hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 hidden md:block"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
                     </button>
 
                     {/* Scrollable Area */}
-                    <div 
+                    <div
                         id="product-carousel"
                         className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
@@ -45,11 +46,11 @@ const ProductGrid = () => {
                     </div>
 
                     {/* Next Button */}
-                    <button 
+                    <button
                         onClick={() => document.getElementById('product-carousel').scrollBy({ left: 300, behavior: 'smooth' })}
                         className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white p-3 rounded-full shadow-lg text-gray-800 hover:bg-[#ed2585] hover:text-white transition-all duration-300 opacity-0 group-hover:opacity-100 hidden md:block"
                     >
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                     </button>
                 </div>
 
