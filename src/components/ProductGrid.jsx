@@ -9,12 +9,12 @@ const ProductGrid = () => {
     const [selectedProduct, setSelectedProduct] = React.useState(null);
 
     return (
-        <section className="py-16 bg-white">
+        <section className="py-8 bg-white">
             <div className="container mx-auto px-4 md:px-8 relative group">
-                <div className="text-center mb-10">
-                    <h2 className="text-4xl md:text-5xl font-serif font-medium text-gray-900 mb-6 tracking-[0.2em] uppercase">New Arrivals</h2>
-                    <div className="w-24 h-1 bg-[#ed2585] mx-auto rounded-full"></div>
-                    <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg font-light leading-relaxed">
+                <div className="text-center mb-6">
+                    <h2 className="text-2xl md:text-3xl font-serif font-medium text-gray-900 mb-3 tracking-[0.2em] uppercase">New Arrivals</h2>
+                    <div className="w-16 h-1 bg-[#ed2585] mx-auto rounded-full"></div>
+                    <p className="mt-3 text-gray-600 max-w-2xl mx-auto text-sm font-light leading-relaxed">
                         Discover our latest collection of handpicked ethnic wear, designed to make you shine on every occasion.
                     </p>
                 </div>
