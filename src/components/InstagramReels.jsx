@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Play, Volume2, VolumeX, ArrowRight, ArrowLeft } from 'lucide-react';
 
 import vid1 from '../assets/carousel-video-1.mp4';
@@ -113,7 +113,34 @@ const ReelCard = ({ data }) => {
     );
 };
 
+const ACCESS_TOKEN = ""; // TODO: Paste your Instagram Basic Display Access Token here. Generate one at developers.facebook.com
+
 const InstagramReels = () => {
+    const [reels, setReels] = useState(reelsData);
+
+    useEffect(() => {
+        const fetchReels = async () => {
+            if (!ACCESS_TOKEN) return;
+            try {
+                const response = await fetch(`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink,timestamp&access_token=${ACCESS_TOKEN}`);
+                const data = await response.json();
+
+                if (data && data.data) {
+                    const videoReels = data.data.filter(item => item.media_type === 'VIDEO' || item.media_type === 'CAROUSEL_ALBUM').slice(0, 6).map(item => ({
+                        id: item.id,
+                        video: item.media_url,
+                        views: "New" // The Basic Display API does not provide view counts. Consider Graph API for insights if needed.
+                    }));
+                    if (videoReels.length > 0) setReels(videoReels);
+                }
+            } catch (error) {
+                console.error("Error fetching Instagram reels:", error);
+            }
+        };
+
+        fetchReels();
+    }, []);
+
     return (
         <section className="py-16 bg-white">
             <div className="container mx-auto px-4">
@@ -158,7 +185,7 @@ const InstagramReels = () => {
                         className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0"
                         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                     >
-                        {reelsData.map((reel) => (
+                        {reels.map((reel) => (
                             <div key={reel.id} className="min-w-[200px] md:min-w-[240px] snap-center">
                                 <ReelCard data={reel} />
                             </div>
@@ -166,14 +193,7 @@ const InstagramReels = () => {
                     </div>
                 </div>
 
-                {/* View More Button */}
-                <div className="mt-8 text-center">
-                    {/* Dropped the big button as per user image not showing one explicitly immediately, but good UX to keep a link if needed. 
-                         However, user asked for "section like this". The image shows header and cards. 
-                         I will keep a subtle link or just the header link implies it. 
-                         I'll add a simple text link if needed, but for now matching the "layout" focus. 
-                     */}
-                </div>
+                <div className="mt-8 text-center"></div>
 
             </div>
         </section>
