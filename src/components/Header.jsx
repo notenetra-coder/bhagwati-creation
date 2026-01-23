@@ -79,7 +79,7 @@ const Header = () => {
                         {/* Catalog Dropdown */}
                         <div className="relative group py-2">
                             <button className="text-sm font-semibold uppercase tracking-wider text-white hover:text-gray-100 transition-colors duration-300 flex items-center gap-1">
-                                STITCHED COLLECTION
+                                STITCHED CATALOG
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:rotate-180"><path d="m6 9 6 6 6-6" /></svg>
                             </button>
                             <div className="absolute left-1/2 -translate-x-1/2 top-full w-64 bg-white shadow-xl rounded-md overflow-hidden hidden group-hover:block border border-gray-100 transform origin-top transition-all duration-200 z-[60]">
