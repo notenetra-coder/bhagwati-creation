@@ -71,19 +71,54 @@ const Header = () => {
 
                     {/* Center: Navigation Links (Desktop) */}
                     <nav className="hidden lg:flex flex-1 justify-center space-x-8 xl:space-x-12">
-                        {navLinks.map((link) => (
-                            <Link
-                                key={link.name}
-                                to={link.href}
-                                className={`text-sm font-semibold uppercase tracking-wider relative group py-2
-                                    ${link.isSale ? 'text-white' : 'text-white hover:text-gray-100'}
-                                    transition-colors duration-300
-                                `}
-                            >
-                                {link.name}
-                                <span className={`absolute bottom-0 left-0 w-full h-[2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></span>
-                            </Link>
-                        ))}
+                        <Link to="/" className="text-sm font-semibold uppercase tracking-wider text-white hover:text-gray-100 transition-colors duration-300 relative group py-2">
+                            HOME
+                            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        </Link>
+
+                        {/* Catalog Dropdown */}
+                        <div className="relative group py-2">
+                            <button className="text-sm font-semibold uppercase tracking-wider text-white hover:text-gray-100 transition-colors duration-300 flex items-center gap-1">
+                                CATALOG
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:rotate-180"><path d="m6 9 6 6 6-6" /></svg>
+                            </button>
+                            <div className="absolute left-1/2 -translate-x-1/2 top-full w-64 bg-white shadow-xl rounded-md overflow-hidden hidden group-hover:block border border-gray-100 transform origin-top transition-all duration-200 z-[60]">
+                                <div className="py-2 flex flex-col">
+                                    {[
+                                        "Chanderi Collection",
+                                        "Muslin Suits",
+                                        "Organza Suits",
+                                        "Silk Collection",
+                                        "Coords",
+                                        "Cotton Suits",
+                                        "Party Wear",
+                                        "Georgette Collection",
+                                        "Pakistani Suits",
+                                        "Tissue Collection",
+                                        "Velvet Collection",
+                                        "Handpainted Collection"
+                                    ].map((item) => (
+                                        <Link
+                                            key={item}
+                                            to={`/category/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                                            className="px-6 py-3 text-sm text-gray-700 hover:bg-[#ed2585] hover:text-white transition-colors text-left font-medium uppercase tracking-wide border-b border-gray-50 last:border-0"
+                                        >
+                                            {item}
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+
+                        <Link to="/category/new-arrivals" className="text-sm font-semibold uppercase tracking-wider text-white hover:text-gray-100 transition-colors duration-300 relative group py-2">
+                            NEW ARRIVALS
+                            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        </Link>
+
+                        <Link to="/category/all-collections" className="text-sm font-semibold uppercase tracking-wider text-white hover:text-gray-100 transition-colors duration-300 relative group py-2">
+                            ALL COLLECTIONS
+                            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                        </Link>
                     </nav>
 
                     {/* Right: Icons */}
