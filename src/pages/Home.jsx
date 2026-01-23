@@ -10,8 +10,7 @@ const Home = () => {
     return (
         <>
             <Hero />
-            <FeaturedCarousel />
-            <ShopByCategories />
+            <InstagramReels />
             <ProductGrid title="New Arrivals" CarouselId="new-arrivals" />
             <ProductGrid
                 title="Co-ords Collection"
@@ -46,7 +45,8 @@ const Home = () => {
                     image: null
                 }))}
             />
-            <InstagramReels />
+            <ShopByCategories />
+            <FeaturedCarousel />
             <VideoShopping />
         </>
     );
