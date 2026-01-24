@@ -26,10 +26,25 @@ const Checkout = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        // Create Order Object
+        const newOrder = {
+            id: 'ORD-' + Date.now(),
+            date: new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString(),
+            status: 'Pending',
+            customer: formData,
+            items: cart,
+            total: total
+        };
+
+        // Save to LocalStorage (Simulating Backend)
+        const existingOrders = JSON.parse(localStorage.getItem('orders') || '[]');
+        localStorage.setItem('orders', JSON.stringify([newOrder, ...existingOrders]));
+
         // Here you would integrate with a payment gateway or WizApp API
-        alert('Order Placed Successfully! (Simulation)');
+        alert(`Order Placed Successfully! Order ID: ${newOrder.id}`);
         clearCart();
-        navigate('/'); // Or navigate to an Order Success page
+        navigate('/');
     };
 
     if (cart.length === 0) {

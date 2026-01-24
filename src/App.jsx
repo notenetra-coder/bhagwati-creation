@@ -15,6 +15,8 @@ const Wishlist = lazy(() => import('./pages/Wishlist'));
 const CategoryPage = lazy(() => import('./pages/CategoryPage'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Checkout = lazy(() => import('./pages/Checkout'));
+const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 
 function App() {
   // Main application component
@@ -38,6 +40,8 @@ function App() {
             <Route path="/category/:categoryName" element={<CategoryPage />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="/admin" element={<AdminLogin />} />
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
           </Routes>
         </Suspense>
       </main>
