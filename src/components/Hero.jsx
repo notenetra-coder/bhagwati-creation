@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import heroSlide1 from '../assets/hero_slide_1.png';
-import heroSlide2 from '../assets/hero_slide_2.png';
-import heroSlide3 from '../assets/hero_slide_3.jpg';
 
 const slides = [
     {
@@ -9,30 +7,11 @@ const slides = [
         image: heroSlide1,
         link: '/category/fabric-collection',
         buttonText: "Explore Fabrics"
-    },
-    {
-        id: 2,
-        image: heroSlide2,
-        link: '/category/festive-collection',
-        buttonText: "Shop Festive"
-    },
-    {
-        id: 3,
-        image: heroSlide3,
-        link: '/category/wedding-collection',
-        buttonText: "Wedding Special"
     }
 ];
 
 const Hero = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length);
-        }, 5000); // 5 seconds for these detailed images
-        return () => clearInterval(interval);
-    }, []);
 
     const slide = slides[currentSlide];
 
@@ -59,33 +38,6 @@ const Hero = () => {
                     </button>
                 </div>
             </div>
-
-            {/* Carousel Indicators */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-                {slides.map((_, index) => (
-                    <button
-                        key={index}
-                        className={`transition-all duration-300 shadow-sm border border-white/50 rounded-full h-2 md:h-3
-                            ${currentSlide === index ? 'bg-white w-8' : 'bg-white/50 hover:bg-white/80 w-2 md:w-3'}
-                        `}
-                        onClick={() => setCurrentSlide(index)}
-                    />
-                ))}
-            </div>
-
-            {/* Navigation Arrows (Optional but good for 2 slides) */}
-            <button
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/80 p-2 md:p-3 rounded-full backdrop-blur-sm transition-all text-white hover:text-gray-900 hidden md:block"
-                onClick={() => setCurrentSlide(prev => prev === 0 ? slides.length - 1 : prev - 1)}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
-            </button>
-            <button
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/80 p-2 md:p-3 rounded-full backdrop-blur-sm transition-all text-white hover:text-gray-900 hidden md:block"
-                onClick={() => setCurrentSlide(prev => (prev + 1) % slides.length)}
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-            </button>
 
         </section>
     );
