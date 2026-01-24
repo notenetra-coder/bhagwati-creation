@@ -1,7 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: ''
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert(`Thank you, ${formData.firstName}! We have received your message and will contact you shortly.`);
+        setFormData({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            message: ''
+        });
+    };
+
     return (
         <div className="container mx-auto px-4 py-12">
             {/* Header */}
@@ -70,12 +94,16 @@ const Contact = () => {
                 {/* Contact Form */}
                 <div className="w-full md:w-2/3">
                     <h2 className="text-2xl font-serif mb-6">Send us a Message</h2>
-                    <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                    <form className="space-y-6" onSubmit={handleSubmit}>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">First Name</label>
                                 <input
+                                    required
                                     type="text"
+                                    name="firstName"
+                                    value={formData.firstName}
+                                    onChange={handleChange}
                                     className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[#ed2585] transition-colors"
                                     placeholder="John"
                                 />
@@ -83,7 +111,11 @@ const Contact = () => {
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
                                 <input
+                                    required
                                     type="text"
+                                    name="lastName"
+                                    value={formData.lastName}
+                                    onChange={handleChange}
                                     className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[#ed2585] transition-colors"
                                     placeholder="Doe"
                                 />
@@ -94,7 +126,11 @@ const Contact = () => {
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
                                 <input
+                                    required
                                     type="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
                                     className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[#ed2585] transition-colors"
                                     placeholder="john@example.com"
                                 />
@@ -102,7 +138,11 @@ const Contact = () => {
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Phone</label>
                                 <input
+                                    required
                                     type="tel"
+                                    name="phone"
+                                    value={formData.phone}
+                                    onChange={handleChange}
                                     className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[#ed2585] transition-colors"
                                     placeholder="+91 90137 76435"
                                 />
@@ -112,6 +152,10 @@ const Contact = () => {
                         <div>
                             <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
                             <textarea
+                                required
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                                 rows="5"
                                 className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[#ed2585] transition-colors"
                                 placeholder="How can we help you?"
@@ -119,6 +163,7 @@ const Contact = () => {
                         </div>
 
                         <button
+                            type="submit"
                             className="bg-black text-white px-8 py-4 rounded font-medium hover:bg-[#ed2585] transition-colors uppercase tracking-wider text-sm w-full md:w-auto"
                         >
                             Send Message
