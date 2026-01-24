@@ -75,7 +75,7 @@ const Chatbot = () => {
             return "You can reach us at bhagwaticreationshelpdesk@gmail.com or call us at +91-9013776435 (Mon-Sat, 10am - 7pm).";
         }
         if (lowerQuery.includes('store') || lowerQuery.includes('location') || lowerQuery.includes('address')) {
-            return "Our flagship store is located in Surat, Gujarat. Come visit us!";
+            return "Our flagship store is located at G-29/ 1 Sector -3, Rohini, Delhi - 110085. Come visit us!";
         }
 
         // Closing
@@ -123,7 +123,7 @@ const Chatbot = () => {
 
         // Locations (Specific)
         if (lowerQuery.includes('delhi') || lowerQuery.includes('noida') || lowerQuery.includes('gurgaon')) {
-            return "Our main dispatch center is in Delhi. We deliver to Delhi/NCR within 2-3 days.";
+            return "Our main store is in Rohini, Delhi. We deliver to Delhi/NCR within 24-48 hours.";
         }
 
         // Offers & Discounts

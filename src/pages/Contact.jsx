@@ -47,9 +47,9 @@ const Contact = () => {
                             <div>
                                 <h3 className="font-semibold text-gray-900">Office</h3>
                                 <p className="text-gray-600 mt-1">
-                                    123 Fashion Street,<br />
-                                    Textile Market Area,<br />
-                                    Surat, Gujarat - 395002
+                                    G-29/ 1 Sector -3,<br />
+                                    Rohini, Near Sector-3 Bus Stand & Mother Divine Public School,<br />
+                                    Delhi - 110085
                                 </p>
                             </div>
                         </div>
