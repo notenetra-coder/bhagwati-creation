@@ -62,6 +62,7 @@ export const ShopProvider = ({ children }) => {
 
     const login = () => setIsLoggedIn(true);
     const logout = () => setIsLoggedIn(false);
+    const clearCart = () => setCart([]);
 
     return (
         <ShopContext.Provider value={{
@@ -75,7 +76,8 @@ export const ShopProvider = ({ children }) => {
             addToWishlist,
             removeFromWishlist,
             login,
-            logout
+            logout,
+            clearCart
         }}>
             {children}
         </ShopContext.Provider>

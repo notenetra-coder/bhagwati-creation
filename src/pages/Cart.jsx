@@ -67,7 +67,10 @@ const Cart = () => {
                             <span>Total</span>
                             <span>₹{total.toLocaleString()}</span>
                         </div>
-                        <button className="w-full bg-[#ed2585] text-white py-3 rounded font-semibold uppercase tracking-wider hover:bg-[#c9186b]">
+                        <button
+                            onClick={() => navigate('/checkout')}
+                            className="w-full bg-[#ed2585] text-white py-3 rounded font-semibold uppercase tracking-wider hover:bg-[#c9186b]"
+                        >
                             Checkout
                         </button>
                     </div>

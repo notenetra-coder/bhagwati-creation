@@ -14,6 +14,7 @@ const Cart = lazy(() => import('./pages/Cart'));
 const Wishlist = lazy(() => import('./pages/Wishlist'));
 const CategoryPage = lazy(() => import('./pages/CategoryPage'));
 const Contact = lazy(() => import('./pages/Contact'));
+const Checkout = lazy(() => import('./pages/Checkout'));
 
 function App() {
   // Main application component
@@ -36,6 +37,7 @@ function App() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/category/:categoryName" element={<CategoryPage />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </Suspense>
       </main>
