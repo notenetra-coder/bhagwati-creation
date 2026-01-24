@@ -17,6 +17,9 @@ const Contact = lazy(() => import('./pages/Contact'));
 const Checkout = lazy(() => import('./pages/Checkout'));
 const AdminLogin = lazy(() => import('./pages/admin/AdminLogin'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const TrackOrder = lazy(() => import('./pages/TrackOrder'));
+const ShippingPolicy = lazy(() => import('./pages/ShippingPolicy'));
+const ReturnExchange = lazy(() => import('./pages/ReturnExchange'));
 
 function App() {
   // Main application component
@@ -42,6 +45,9 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/admin" element={<AdminLogin />} />
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/track-order" element={<TrackOrder />} />
+            <Route path="/shipping-policy" element={<ShippingPolicy />} />
+            <Route path="/return-exchange" element={<ReturnExchange />} />
           </Routes>
         </Suspense>
       </main>

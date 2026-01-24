@@ -35,9 +35,9 @@ const Footer = ({ onAboutClick }) => {
                                 <button onClick={onAboutClick} className="hover:text-primary transition-colors text-left">About Us</button>
                             </li>
                             <li><Link to="/contact" className="hover:text-primary transition-colors">Contact Us</Link></li>
-                            <li><a href="#" className="hover:text-primary transition-colors">Track Order</a></li>
-                            <li><a href="#" className="hover:text-primary transition-colors">Shipping Policy</a></li>
-                            <li><a href="#" className="hover:text-primary transition-colors">Return & Exchange</a></li>
+                            <li><Link to="/track-order" className="hover:text-primary transition-colors">Track Order</Link></li>
+                            <li><Link to="/shipping-policy" className="hover:text-primary transition-colors">Shipping Policy</Link></li>
+                            <li><Link to="/return-exchange" className="hover:text-primary transition-colors">Return & Exchange</Link></li>
                         </ul>
                     </div>
 
