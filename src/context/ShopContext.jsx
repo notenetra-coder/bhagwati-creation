@@ -40,7 +40,8 @@ export const ShopProvider = ({ children }) => {
         }
 
         setCart((prev) => [...prev, product]);
-        alert(`Added ${product.name} to cart!`);
+        const sizeMsg = product.selectedSize ? ` (Size: ${product.selectedSize})` : '';
+        alert(`Added ${product.name}${sizeMsg} to cart!`);
     };
 
     const removeFromCart = (productId) => {

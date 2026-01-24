@@ -17,7 +17,8 @@ export const products = [
         tag: "Best Seller",
         image: product1,
         description: "Elegant peach floral Anarkali set crafted from premium cotton. Features intricate floral prints, a flared silhouette, and a matching bright dupatta. Perfect for festive occasions and comfortable enough for all-day wear.",
-        stock: 15
+        stock: 15,
+        sizes: ["S", "M", "L", "XL", "XXL"]
     },
     {
         id: 2,
@@ -27,7 +28,8 @@ export const products = [
         originalPrice: "₹2,599",
         image: product2,
         description: "Stunning teal kurta with gold thread embroidery. Made from soft silk blend fabric. Pair it with beige leggings or palazzos for a complete ethnic look.",
-        stock: 0
+        stock: 0,
+        sizes: ["S", "M", "L", "XL"]
     },
     {
         id: 3,
@@ -37,7 +39,8 @@ export const products = [
         tag: "New",
         image: product3,
         description: "Breezy ivory cotton maxi dress with minimal detailing. Ideal for summer outings or casual gatherings. Breathable fabric and relaxed fit.",
-        stock: 20
+        stock: 20,
+        sizes: ["XS", "S", "M", "L", "XL"]
     },
     {
         id: 4,
@@ -47,7 +50,8 @@ export const products = [
         originalPrice: "₹3,999",
         image: product4,
         description: "Chic lavender co-ord set featuring a crop top and high-waisted trousers. Adorned with delicate embroidery, this set is a perfect blend of modern style and traditional elegance.",
-        stock: 2
+        stock: 2,
+        sizes: ["S", "M", "L"]
     },
     {
         id: 5,
@@ -58,7 +62,8 @@ export const products = [
         tag: "Sale",
         image: product5,
         description: "Luxurious maroon silk sharara set with heavy embroidery work. Includes a short kurta, flared sharara pants, and a net dupatta. A showstopper for weddings.",
-        stock: 8
+        stock: 8,
+        sizes: ["M", "L", "XL", "XXL"]
     },
     {
         id: 6,
@@ -67,7 +72,8 @@ export const products = [
         price: "₹1,599",
         image: product6,
         description: "Contemporary indigo block print co-ord set. Stylish and comfortable, perfect for office wear or casual day outs. Made from 100% cotton.",
-        stock: 12
+        stock: 12,
+        sizes: ["S", "M", "L", "XL"]
     },
     {
         id: 7,
@@ -77,7 +83,8 @@ export const products = [
         tag: "Trending",
         image: product7,
         description: "Graceful rose pink georgette saree with a subtle sheen. Lightweight and easy to drape. Comes with a matching unstitched blouse piece.",
-        stock: 5
+        stock: 5,
+        sizes: ["Free Size"]
     },
     {
         id: 8,
@@ -87,6 +94,7 @@ export const products = [
         originalPrice: "₹3,499",
         image: product8,
         description: "Vibrant mustard palazzo set. Features a straight cut kurta and wide-legged palazzos. A classic ensemble for any traditional event.",
-        stock: 10
+        stock: 10,
+        sizes: ["S", "M", "L", "XL", "XXL"]
     },
 ];

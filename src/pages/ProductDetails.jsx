@@ -28,6 +28,15 @@ const ProductDetails = () => {
     }
 
     const isOutOfStock = product.stock <= 0;
+    const [selectedSize, setSelectedSize] = React.useState(null);
+
+    const handleAddToCart = () => {
+        if (product.sizes && !selectedSize) {
+            alert('Please select a size');
+            return;
+        }
+        addToCart({ ...product, selectedSize });
+    };
 
     return (
         <section className="py-12 bg-gray-50 min-h-screen">
@@ -81,9 +90,30 @@ const ProductDetails = () => {
                                 <span className="text-xl text-gray-400 line-through mb-1">{product.originalPrice}</span>
                             )}
                         </div>
-                        <div className={`text-sm mb-8 font-medium ${isOutOfStock ? 'text-red-500' : 'text-green-600'}`}>
+                        <div className={`text-sm mb-6 font-medium ${isOutOfStock ? 'text-red-500' : 'text-green-600'}`}>
                             {isOutOfStock ? 'Currently Unavailable' : `In Stock: ${product.stock > 10 ? 'Available' : product.stock + ' left'}`}
                         </div>
+
+                        {/* Size Selector */}
+                        {product.sizes && (
+                            <div className="mb-8">
+                                <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Select Size</h3>
+                                <div className="flex flex-wrap gap-3">
+                                    {product.sizes.map((size) => (
+                                        <button
+                                            key={size}
+                                            onClick={() => setSelectedSize(size)}
+                                            className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all ${selectedSize === size
+                                                    ? 'bg-black text-white border-black'
+                                                    : 'bg-white text-gray-700 border-gray-300 hover:border-black'
+                                                }`}
+                                        >
+                                            {size}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
 
                         <p className="text-gray-600 leading-relaxed mb-10 text-lg">
                             {product.description || "This is a premium high-quality aesthetic product designed to make you stand out. Crafted with attention to detail and fine fabrics."}
@@ -91,7 +121,7 @@ const ProductDetails = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <button
-                                onClick={() => addToCart(product)}
+                                onClick={handleAddToCart}
                                 disabled={isOutOfStock}
                                 className={`flex-1 py-4 px-8 rounded-full font-semibold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 shadow-lg duration-200
                                     ${isOutOfStock
