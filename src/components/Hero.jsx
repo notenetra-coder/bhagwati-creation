@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import heroSlide1 from '../assets/hero_slide_1.png';
 import heroSlide2 from '../assets/hero_slide_2.png';
+import heroSlide3 from '../assets/hero_slide_3.jpg';
 
 const slides = [
     {
         id: 1,
         image: heroSlide1,
-        link: '/category/fabric-collection', // Assuming a link, can be generic
+        link: '/category/fabric-collection',
         buttonText: "Explore Fabrics"
     },
     {
@@ -14,6 +15,12 @@ const slides = [
         image: heroSlide2,
         link: '/category/festive-collection',
         buttonText: "Shop Festive"
+    },
+    {
+        id: 3,
+        image: heroSlide3,
+        link: '/category/wedding-collection',
+        buttonText: "Wedding Special"
     }
 ];
 
