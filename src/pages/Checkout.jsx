@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useShop } from '../context/ShopContext';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import { EmailService } from '../services/email';
 
 const Checkout = () => {
     const { cart, clearCart } = useShop();
@@ -24,7 +25,7 @@ const Checkout = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Create Order Object
@@ -41,8 +42,15 @@ const Checkout = () => {
         const existingOrders = JSON.parse(localStorage.getItem('orders') || '[]');
         localStorage.setItem('orders', JSON.stringify([newOrder, ...existingOrders]));
 
-        // Here you would integrate with a payment gateway or WizApp API
-        alert(`Order Placed Successfully! Order ID: ${newOrder.id}`);
+        // Send Email Notification
+        const emailSent = await EmailService.sendOrderEmail(newOrder);
+
+        let msg = `Order Placed Successfully! Order ID: ${newOrder.id}`;
+        if (!emailSent) {
+            msg += `\n(Note: Email notification failed. Please verify your EmailJS configuration.)`;
+        }
+
+        alert(msg);
         clearCart();
         navigate('/');
     };

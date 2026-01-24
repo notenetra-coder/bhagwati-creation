@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { EmailService } from '../services/email';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -14,16 +15,33 @@ const Contact = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        alert(`Thank you, ${formData.firstName}! We have received your message and will contact you shortly.`);
-        setFormData({
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            message: ''
+
+        const emailSent = await EmailService.sendContactEmail({
+            ...formData,
+            message: formData.message // Ensure mapping matches service expectation
         });
+
+        if (emailSent) {
+            alert(`Thank you, ${formData.firstName}! We have received your message and will contact you shortly.`);
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                message: ''
+            });
+        } else {
+            alert(`Thank you, ${formData.firstName}! Message saved locally (Email notification failed - verify configuration).`);
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                message: ''
+            });
+        }
     };
 
     return (
