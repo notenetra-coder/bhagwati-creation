@@ -72,7 +72,7 @@ const Chatbot = () => {
 
         // Contact
         if (lowerQuery.includes('contact') || lowerQuery.includes('phone') || lowerQuery.includes('email') || lowerQuery.includes('support')) {
-            return "You can reach us at support@bhagwaticreations.com or call us at +91-9876543210 (Mon-Sat, 10am - 7pm).";
+            return "You can reach us at bhagwaticreationshelpdesk@gmail.com or call us at +91-9013776435 (Mon-Sat, 10am - 7pm).";
         }
         if (lowerQuery.includes('store') || lowerQuery.includes('location') || lowerQuery.includes('address')) {
             return "Our flagship store is located in Surat, Gujarat. Come visit us!";
@@ -99,7 +99,7 @@ const Chatbot = () => {
             return "Yes! We offer custom stitching for Blouses, Lehengas, and Suits. You can select the 'Stitching' option on the product page.";
         }
         if (lowerQuery.includes('wholesale') || lowerQuery.includes('bulk') || lowerQuery.includes('resell')) {
-            return "We do offer wholesale pricing for bulk orders. Please contact us at wholesale@bhagwaticreations.com for more details.";
+            return "We do offer wholesale pricing for bulk orders. Please contact us at bhagwaticreationshelpdesk@gmail.com for more details.";
         }
         if (lowerQuery.includes('international') || lowerQuery.includes('usa') || lowerQuery.includes('uk') || lowerQuery.includes('canada') || lowerQuery.includes('abroad')) {
             return "Yes, we ship globally! International shipping rates are calculated at checkout based on weight and destination.";

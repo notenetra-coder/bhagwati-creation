@@ -51,11 +51,11 @@ const Footer = ({ onAboutClick }) => {
                             </li>
                             <li className="flex items-center gap-3">
                                 <Phone size={18} />
-                                <span>+91 98765 43210</span>
+                                <span>+91 90137 76435</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <Mail size={18} />
-                                <span>support@mystyle.com</span>
+                                <span>bhagwaticreationshelpdesk@gmail.com</span>
                             </li>
                         </ul>
                     </div>

@@ -25,7 +25,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-gray-900">Phone</h3>
-                                <p className="text-gray-600 mt-1">+91 98765 43210</p>
+                                <p className="text-gray-600 mt-1">+91 90137 76435</p>
                                 <p className="text-xs text-gray-500 mt-1">Mon-Sat 9am to 6pm</p>
                             </div>
                         </div>
@@ -36,8 +36,7 @@ const Contact = () => {
                             </div>
                             <div>
                                 <h3 className="font-semibold text-gray-900">Email</h3>
-                                <p className="text-gray-600 mt-1">helpdesk@bhagwaticreations.com</p>
-                                <p className="text-gray-600 mt-1">support@bhagwaticreations.com</p>
+                                <p className="text-gray-600 mt-1">bhagwaticreationshelpdesk@gmail.com</p>
                             </div>
                         </div>
 
@@ -105,7 +104,7 @@ const Contact = () => {
                                 <input
                                     type="tel"
                                     className="w-full px-4 py-3 border border-gray-300 rounded focus:outline-none focus:border-[#ed2585] transition-colors"
-                                    placeholder="+91 98765 43210"
+                                    placeholder="+91 90137 76435"
                                 />
                             </div>
                         </div>
