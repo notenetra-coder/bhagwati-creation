@@ -17,8 +17,8 @@ const Hero = () => {
 
     return (
         <section className="relative w-full overflow-hidden bg-gray-50">
-            {/* Aspect Ratio Container - using a roughly common web banner aspect ratio or responsive */}
-            <div className="relative w-full aspect-[16/7] md:aspect-[21/9] lg:aspect-[3/1] min-h-[400px] md:min-h-[500px]">
+            {/* Full Screen Container */}
+            <div className="relative w-full h-screen min-h-[500px]">
 
                 {/* Background Image with Transition */}
                 <div
