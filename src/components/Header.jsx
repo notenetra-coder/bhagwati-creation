@@ -42,12 +42,12 @@ const Header = () => {
     return (
         <div className="w-full sticky top-0 z-50 bg-white font-sans shadow-sm">
             {/* Announcement Bar */}
-            <div className={`bg-[#ed2585] text-white text-center transition-all duration-500 ease-in-out overflow-hidden ${isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-10 py-2 opacity-100'} text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase`}>
+            <div className={`bg-gradient-to-b from-[#ff7eb3] to-[#ed2585] text-white text-center transition-all duration-500 ease-in-out overflow-hidden ${isScrolled ? 'max-h-0 py-0 opacity-0' : 'max-h-10 py-2 opacity-100'} text-[10px] md:text-xs tracking-[0.2em] font-medium uppercase shadow-sm`}>
                 Free Shipping on Orders Above ₹999
             </div>
 
             {/* Main Header - Single Line */}
-            <header className="bg-[#ed2585] z-50 transition-all duration-300 shadow-lg">
+            <header className="bg-gradient-to-b from-[#ff5fac] to-[#ed2585] z-50 transition-all duration-300 shadow-xl border-t border-white/20">
                 <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ease-in-out ${isScrolled ? 'h-16' : 'h-20 md:h-24'}`}>
 
                     {/* Left: Mobile Menu Button */}
