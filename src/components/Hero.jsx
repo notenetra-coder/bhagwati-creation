@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import heroSlide1 from '../assets/hero_wide_final.png';
+import heroSlide1 from '../assets/hero_ultra_wide_final.png';
 
 const slides = [
     {
