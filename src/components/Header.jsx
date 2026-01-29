@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X, User } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
-import logo from '../assets/logo_v5.png';
+import logo from '../assets/logo_v6.png';
 import LoginModal from './LoginModal';
 
 const Header = () => {
