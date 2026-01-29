@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Search, Heart, ShoppingBag, Menu, X, User } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useShop } from '../context/ShopContext';
-import logo from '../assets/logo_v3.png';
+import logo from '../assets/logo_v5.png';
 import LoginModal from './LoginModal';
 
 const Header = () => {
@@ -47,7 +47,7 @@ const Header = () => {
             </div>
 
             {/* Main Header - Single Line */}
-            <header className="bg-gradient-to-b from-[#1a1512] via-[#0e0a08] to-[#070504] z-50 transition-all duration-300 shadow-2xl border-t border-white/20">
+            <header className="bg-[#0e0a08] z-50 transition-all duration-300 shadow-2xl border-t border-white/20">
                 <div className={`container mx-auto px-4 md:px-8 flex items-center justify-between transition-all duration-500 ease-in-out ${isScrolled ? 'h-16' : 'h-20 md:h-24'}`}>
 
                     {/* Left: Mobile Menu Button */}
