@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { X, Send, Minus } from 'lucide-react';
-import logo from '../assets/logo.png';
+import logo from '../assets/logo_v6.png';
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
